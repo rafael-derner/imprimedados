@@ -1,21 +1,19 @@
 {
+    "manifest_version": 2,
+    "name": "Imprime Dados",
+    "version": "1.0",
 
-  "description": "Imprime dados quando acionado",
-  "manifest_version": 2,
-  "name": "ImprimeDados",
-  "version": "1.0",
-  "icons": {
-    "48": "icons/beasts-48.png"
-  },
+    "description": "Imprime dados na tela",
 
-  "permissions": [
-    "activeTab"
-  ],
+    "content_scripts": [
+        {
+            "matches": ["*://*.google.com/*"],
+            "js": ["imprimedados.js"]
+        }
+    ],
 
-  "browser_action": {
-    "default_icon": "icons/beasts-32.png",
-    "default_title": "Imprimir",
-    "default_popup": "popup/popup.html"
-  }
-
+    "permissions": [
+        "activeTab",
+        "*://*.google.com/*"
+    ]
 }
